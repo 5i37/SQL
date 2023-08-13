@@ -10,9 +10,9 @@ declare @price decimal(12,2);
 declare @p_dis bit;
 FETCH NEXT FROM cursor_product INTO @pname,@price,@p_dis,@cname ;
 while @@FETCH_STATUS = 0 
-	begin 
-		FETCH NEXT FROM cursor_product INTO @pname,@price,@p_dis,@cname ;
+	begin 		
 		print  @pname+' => '+cast(@price as varchar)+' => '+cast(@p_dis as varchar)+' => '+@cname;
+		FETCH NEXT FROM cursor_product INTO @pname,@price,@p_dis,@cname ;
 	end 
 
 close cursor_product 
