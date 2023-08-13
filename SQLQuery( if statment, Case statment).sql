@@ -21,8 +21,8 @@ FROM Supplier
 SELECT * FROM  Supplier
 
 SELECT Companyname,Fax = 
-	CASE Fax 
-		WHEN ISNULL(Fax,NULL) THEN 'NOT FOUND'
+	CASE  
+		WHEN Fax IS NULL THEN 'NOT FOUND'
 	
 		ELSE Fax
 	END 
